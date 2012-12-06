@@ -158,6 +158,14 @@ class DollarRecognizer {
     return (u == -1) ? new Result("No match.", 0.0) : new Result(this.Unistrokes.get(u).Name, useProtractor ? 1.0 / b : 1.0 - b / HalfDiagonal);
   }
   
+  public int addGesture(String name, float[] floats) {
+    Point[] points = new Point[floats.length/2];
+    for (int i=0; i<floats.length; i+=2) {
+      points[i/2] = new Point(floats[i], floats[i+1]); 
+    }
+    return addGesture(name, points);
+  }
+  
   public int addGesture(String name, Point[] points) {
     this.Unistrokes.add(new Unistroke(name, points)); // append new unistroke
     int num = 0;
