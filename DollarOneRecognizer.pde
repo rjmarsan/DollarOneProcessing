@@ -67,6 +67,21 @@
  * STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  **/
+ 
+//
+// DollarRecognizer class constants
+//
+int NumUnistrokes = 16;
+int NumPoints = 64;
+float SquareSize = 250.0;
+Point Origin = new Point(0, 0);
+float Diagonal = sqrt(SquareSize * SquareSize + SquareSize * SquareSize);
+float HalfDiagonal = 0.5 * Diagonal;
+float AngleRange = Deg2Rad(45.0);
+float AnglePrecision = Deg2Rad(2.0);
+float Phi = 0.5 * (-1.0 + sqrt(5.0)); // Golden Ratio
+ 
+ 
 //
 // Unistroke class: a unistroke template
 //
@@ -99,18 +114,6 @@ class Result {
   }
 }
 
-//
-// DollarRecognizer class constants
-//
-int NumUnistrokes = 16;
-int NumPoints = 64;
-float SquareSize = 250.0;
-Point Origin = new Point(0, 0);
-float Diagonal = sqrt(SquareSize * SquareSize + SquareSize * SquareSize);
-float HalfDiagonal = 0.5 * Diagonal;
-float AngleRange = Deg2Rad(45.0);
-float AnglePrecision = Deg2Rad(2.0);
-float Phi = 0.5 * (-1.0 + sqrt(5.0)); // Golden Ratio
 
 //
 // DollarRecognizer class
